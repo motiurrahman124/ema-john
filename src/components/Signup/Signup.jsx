@@ -25,14 +25,15 @@ const Signup = () => {
         }
 
         createUser(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-        })
-        .catch(error => {
-            setError(error.message)
-            console.log(error);
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                form.reset();
+            })
+            .catch(error => {
+                console.log(error);
+                setError(error.message);
+            })
     }
     return (
         <div className='flex justify-center items-center'>
